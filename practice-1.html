@@ -36,7 +36,8 @@
     <script>
 
     function getAllListItem() {
-        let liList  = document.getElementsByTagName("li");
+        // let liList  = document.getElementsByTagName("li");
+        let liList = document.querySelectorAll("li");
         let text ;
         for (var i = 0 ; i < liList.length; i++) {
             console.log(liList[i]);
@@ -45,8 +46,10 @@
 
     function findAllHtmlSpanInOneSection(sectionId) {
         // 返回某个section下所有span中内容为HTML的span标签
-        let section = document.getElementById(sectionId);
-        let spans = section.getElementsByTagName("span");
+        // let section = document.getElementById(sectionId);
+        // let spans = section.getElementsByTagName("span");
+        let section = document.querySelector("#" + sectionId);
+        let spans = section.querySelectorAll("span");
         for (var i = 0 ; i < spans.length; i++) {
             if (spans[i].textContent == "HTML") {
                 console.log(spans[i]);
@@ -56,8 +59,10 @@
 
     function findListItem(sectionId, spanCont) {
         // 返回某个section下，所有所包含span内容为spanCont的LI标签
-        let section = document.getElementById(sectionId);
-        let spans = section.getElementsByTagName("span");
+        // let section = document.getElementById(sectionId);
+        // let spans = section.getElementsByTagName("span");
+        let section = document.querySelector("#" + sectionId);
+        let spans = section.querySelectorAll("span");
         for (var i = 0 ; i < spans.length; i++) {
             if (spans[i].textContent == spanCont) {
                 console.log(spans[i].parentNode);
@@ -68,8 +73,10 @@
 
     function getActiveLinkContent(sectionId) {
         // 返回某个section下，class为active的链接中包含的文字内容
-        let section = document.getElementById(sectionId);
-        let aList = section.getElementsByClassName("active");
+        // let section = document.getElementById(sectionId);
+        // let aList = section.getElementsByClassName("active");
+        let section = document.querySelector("#" + sectionId);
+        let aList = section.querySelectorAll(".active");
         for (var i = 0; i < aList.length; i++) {
             console.log(aList[i].innerHTML);
         }
